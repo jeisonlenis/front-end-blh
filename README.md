@@ -4,13 +4,13 @@
 https://youtu.be/DDdpaVA3_u8
 
 
-# Ejecucion del proyecto:
+# Project Execution:
 
   npm install
   ng serve
 
 
-# Ingreso a rutas:
+# URL Routes:
 
 Autos List: localhost:4200/autos/list
 Autos Add: localhost:4200/autos/add
