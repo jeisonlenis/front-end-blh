@@ -1,27 +1,25 @@
-# BizLatinHubFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+# Youtube Explanation
 
-## Development server
+https://youtu.be/DDdpaVA3_u8
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Ejecucion del proyecto:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  npm install
+  ng serve
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Ingreso a rutas:
 
-## Running unit tests
+Autos List: localhost:4200/autos/list
+Autos Add: localhost:4200/autos/add
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Clientes List: localhost:4200/clientes/list
+Clientes Add: localhost:4200/clientes/add
 
-## Running end-to-end tests
+Vendedores List: localhost:4200/vendedores/list
+Vendedores Add: localhost:4200/vendedores/add
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Ventas List: localhost:4200/ventas/list
+Ventas Add: localhost:4200/ventas/add
