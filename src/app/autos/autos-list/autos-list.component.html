@@ -1,0 +1,59 @@
+<mat-table [dataSource]="autos" class="mat-elevation-z8">
+  <ng-container matColumnDef="Id">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+    <mat-cell *matCellDef="let auto"> {{ auto.id }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Modelo">
+    <mat-header-cell *matHeaderCellDef> Modelo </mat-header-cell>
+    <mat-cell *matCellDef="let auto"> {{ auto.modelo }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Anio">
+    <mat-header-cell *matHeaderCellDef> Anio </mat-header-cell>
+    <mat-cell *matCellDef="let auto"> {{ auto.anio }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Valor">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Valor </mat-header-cell>
+    <mat-cell *matCellDef="let auto"> {{ auto.valor }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Options">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-raised-button color="primary" (click)="addItem()">
+        Nuevo Auto
+      </button>
+    </mat-header-cell>
+
+    <mat-cell *matCellDef="let row; let i = index"
+      ><!--  (click)="updateItem(row.id)"> -->
+      <button
+        mat-mini-fab
+        color="disable"
+        aria-label="Example icon button with a plus one icon"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <!-- (click)="deleteItem(i, row.id, row.title, row.state, row.url)"> -->
+        <mat-icon aria-hidden="false" aria-label="Example home icon"
+          >delete</mat-icon
+        >
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: columnas"></mat-row>
+</mat-table>
+<!-- 
+<mat-paginator
+  #paginator
+  [length]="dataSource.length"
+  [pageIndex]="0"
+  [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 25, 100]"
+>
+</mat-paginator> -->
+<app-autos-add></app-autos-add>

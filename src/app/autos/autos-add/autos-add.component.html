@@ -1,0 +1,35 @@
+<div class="col-md-3">
+  <form [formGroup]="autosForm" (ngSubmit)="saveItem()">
+    <div class="mb-3">
+      <label for="" class="form-label col-md-1">Modelo</label>
+      <input
+        class="form-control form-control-lg"
+        type="text"
+        name="modelo"
+        formControlName="modelo"
+        placeholder="Modelo"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="" class="col-md-1">Año</label>
+      <input
+        class="form-control form-control-lg"
+        type="text"
+        name="anio"
+        formControlName="anio"
+        placeholder="Año"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="" class="col-md-1">Valor</label>
+      <input
+        class="form-control form-control-lg"
+        type="number"
+        name="valor"
+        formControlName="valor"
+        placeholder="valor"
+      />
+    </div>
+    <button type="submit" [disabled]="!autosForm.valid" class="btn btn-primary">Enviar datos</button>
+  </form>
+</div>

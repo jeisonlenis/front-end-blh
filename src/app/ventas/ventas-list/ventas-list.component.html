@@ -1,0 +1,46 @@
+<mat-table [dataSource]="ventas" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Id">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let venta"> {{venta.id}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Vendedor">
+      <mat-header-cell *matHeaderCellDef> Vendedor </mat-header-cell>
+      <mat-cell *matCellDef="let venta"> {{venta.vendedor}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Cliente">
+      <mat-header-cell *matHeaderCellDef> Cliente </mat-header-cell>
+      <mat-cell *matCellDef="let venta"> {{venta.cliente}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Modelo">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> Modelo </mat-header-cell>
+      <mat-cell *matCellDef="let venta"> {{venta.modelo}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Anio Venta">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> Anio Venta </mat-header-cell>
+      <mat-cell *matCellDef="let venta"> {{venta.anio_venta}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Options">
+      <mat-header-cell *matHeaderCellDef>
+        <button  mat-raised-button color="primary" (click)="addItem()">Nuevo Vendedor</button>
+      </mat-header-cell>
+  
+      <mat-cell *matCellDef="let row; let i=index;"><!--  (click)="updateItem(row.id)"> -->
+        <button mat-mini-fab color="disable" aria-label="Example icon button with a plus one icon">
+          <mat-icon>edit</mat-icon>
+        </button>
+  
+        <button mat-icon-button> <!-- (click)="deleteItem(i, row.id, row.title, row.state, row.url)"> -->
+          <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+  </mat-table>
+  <app-ventas-add></app-ventas-add>

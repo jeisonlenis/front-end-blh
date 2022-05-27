@@ -1,0 +1,38 @@
+<mat-form-field appearance="fill">
+  <mat-label>Cliente</mat-label>
+  <input
+    type="text"
+    placeholder="Buscar Cliente"
+    aria-label="text"
+    matInput
+    [formControl]="cliente"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option
+      *ngFor="let option of filteredOptionsCliente | async"
+      [value]="option.nombre"
+    >
+      {{ option.nombre }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Vendedor</mat-label>
+  <input
+    type="text"
+    placeholder="Buscar Vendedor"
+    aria-label="text"
+    matInput
+    [formControl]="vendedor"
+    [matAutocomplete]="auto"
+  />
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option
+      *ngFor="let optionVendedor of filteredOptionsVendedor | async"
+      [value]="option.nombre"
+    >
+      {{ option.nombre }}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

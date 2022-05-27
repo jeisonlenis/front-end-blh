@@ -1,0 +1,36 @@
+<div class="col-md-12">
+    <form [formGroup]="vendedoresForm" (ngSubmit)="saveItem()">
+      <div class="mb-3">
+        <label for="" class="form-label col-md-1">Nombre</label>
+        <input
+          class="col-md-3"
+          type="text"
+          name="nombre"
+          formControlName="nombre"
+          placeholder="Nombre"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="" class="col-md-1">Apellido</label>
+        <input
+          class="col-md-3"
+          type="text"
+          name="apellido"
+          formControlName="apellido"
+          placeholder="Apellido"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="" class="col-md-1">Numero de Documento</label>
+        <input
+          class="col-md-3"
+          type="text"
+          name="numero_id"
+          formControlName="numero_id"
+          placeholder="Numero de Documento"
+        />
+      </div>
+      <button type="submit" [disabled]="!vendedoresForm.valid" class="btn btn-primary">Enviar datos</button>
+    </form>
+  </div>
+  

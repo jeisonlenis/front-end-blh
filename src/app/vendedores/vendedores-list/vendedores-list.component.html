@@ -1,0 +1,41 @@
+<mat-table [dataSource]="vendedores" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="Id">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let vendedor"> {{vendedor.id}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Nombre">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let vendedor"> {{vendedor.nombre}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Apellido">
+      <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+      <mat-cell *matCellDef="let vendedor"> {{vendedor.apellido}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="Numero de Documento">
+      <mat-header-cell mat-header-cell *matHeaderCellDef> Numero de Documento </mat-header-cell>
+      <mat-cell *matCellDef="let vendedor"> {{vendedor.numero_id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Options">
+      <mat-header-cell *matHeaderCellDef>
+        <button  mat-raised-button color="primary" (click)="addItem()">Nuevo Vendedor</button>
+      </mat-header-cell>
+  
+      <mat-cell *matCellDef="let row; let i=index;"><!--  (click)="updateItem(row.id)"> -->
+        <button mat-mini-fab color="disable" aria-label="Example icon button with a plus one icon">
+          <mat-icon>edit</mat-icon>
+        </button>
+  
+        <button mat-icon-button> <!-- (click)="deleteItem(i, row.id, row.title, row.state, row.url)"> -->
+          <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
+  </mat-table>
+  <app-vendedores-add></app-vendedores-add>
